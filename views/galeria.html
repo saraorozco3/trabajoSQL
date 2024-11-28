@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../styles/estilos.css">
+    <script src="../scripts/galeria.js"></script>
+    <title>Hoteles Horizonte</title>
+</head>
+
+<body>
+    <!-- HEADER -->
+    <header class="header">
+        <div class="container d-flex justify-content-between align-items-center">
+            <!-- Logo -->
+            <a href="../index.html" class="navbar-brand">
+                <img src="../images/logo-hotel.png" alt="Logo" class="logo">
+            </a>
+    
+            <!-- Título -->
+            <div class="title-header">HOTELES HORIZONTE</div>
+    
+            <!-- Menú de Navegación para pantallas grandes -->
+            <nav class="navbar navbar-expand-lg navbar-light d-none d-lg-block">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="../views/galeria.html">Portafolio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../views/contacto.html">Contacto</a>
+                    </li>
+                </ul>
+            </nav>
+    
+            <!-- Menú de Navegación para pantallas pequeñas (Menú Hamburguesa) -->
+            <nav class="navbar navbar-expand-lg navbar-light d-block d-lg-none">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+    
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link " href="../index.html">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="../views/galeria.html">Portafolio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../views/contacto.html">Contacto</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- PÁRRAFO INFORMATIVO -->
+
+    <div class="container">
+        <div class="text-center">
+            <h2 class="subtitle">Portafolio</h2>
+            <p>
+                Somos una empresa dedicada a ofrecer la mejor experiencia en el sector hotelero.
+                Nuestro compromiso es brindar un servicio excepcional a nuestros clientes.
+            </p>
+        </div>
+    </div>
+
+    <!-- IMÁGENES GALERIA -->
+
+    <main class="main">
+        <div id="galeria" class="row row-cols-1 row-cols-md-3 g-4">
+
+            <div class="col">
+                <img src="../images/imagen1.jpg" alt="Imagen de la sala de estar del hotel" class="img-fluid galeria-transition">
+            </div>
+            <div class="col">
+                <img src="../images/imagen2.jpg" alt="Imagen del hotel visto desde fuera" class="img-fluid galeria-transition">
+            </div>
+            <div class="col">
+                <img src="../images/imagen3.jpg" alt="Imagen del restaurante del hotel" class="img-fluid galeria-transition">
+            </div>
+            <div class="col">
+                <img src="../images/imagen4.jpg" alt="Imagen del pueblo donde se encuentra el hotel" class="img-fluid galeria-transition">
+            </div>
+            <div class="col">
+                <img src="../images/imagen10.jpg" alt="Imagen del spa del hotel" class="img-fluid galeria-transition">
+            </div>
+            <div class="col">
+                <img src="../images/imagen6.jpg" alt="Imagen de la entrada del hotel" class="img-fluid galeria-transition">
+            </div>
+            <div class="col">
+                <img src="../images/imagen7.jpg" alt="Imagen de una habitación premium del hotel" class="img-fluid galeria-transition">
+            </div>
+            <div class="col">
+                <img src="../images/imagen8.jpg" alt="Imagen de la fachada del hotel" class="img-fluid galeria-transition">
+            </div>
+            <div class="col">
+                <img src="../images/imagen9.jpg" alt="Imagen de una habitación estandar del hotel" class="img-fluid galeria-transition">
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+
+    <footer class="footer bg-light text-center">
+        <div class="container">
+            <div class="row align-items-center" style="height: 100px;">
+                <div class="col-md-4">
+                    <p>Carrer de les Carolines, 11, 08012 Barcelona - Aviso Legal</p>
+                </div>
+                <div class="col-md-4">
+                    <ul class="list-unstyled">
+                        <li><a href="../index.html">Inicio</a></li>
+                        <li><a href="../views/galeria.html">Portafolio</a></li>
+                        <li><a href="../views/contacto.html">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <div style="display: flex; justify-content: center; gap: 1rem;">
+                        <a href="https://facebook.com" target="_blank">
+                            <img src="../images/logo-facebook.png" alt="Facebook" height="30">
+                        </a>
+                        <a href="https://twitter.com" target="_blank">
+                            <img src="../images/logo-twitter.png" alt="Twitter" height="30">
+                        </a>
+                        <a href="https://instagram.com" target="_blank">
+                            <img src="../images/logo-instagram.png" alt="Instagram" height="30">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- SCRIPTS -->
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
