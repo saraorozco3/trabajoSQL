@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../styles/estilos.css">
+    <script src="../scripts/contacto.js"></script>
+    <title>Hoteles Horizonte</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+</head>
+
+<body>
+    <!-- HEADER -->
+    <header class="header">
+        <div class="container d-flex justify-content-between align-items-center">
+
+            <a href="../index.html" class="navbar-brand">
+                <img src="../images/logo-hotel.png" alt="Logo" class="logo">
+            </a>
+
+            <div class="title-header">HOTELES HORIZONTE</div>
+    
+            <!-- Menú de Navegación para pantallas grandes -->
+            <nav class="navbar navbar-expand-lg navbar-light d-none d-lg-block">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../views/galeria.html">Portafolio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="../views/contacto.html">Contacto</a>
+                    </li>
+                </ul>
+            </nav>
+    
+            <!-- Menú de Navegación para pantallas pequeñas (Menú Hamburguesa) -->
+            <nav class="navbar navbar-expand-lg navbar-light d-block d-lg-none"> <!-- Se muestra solo en pantallas pequeñas -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+    
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="../index.html">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../views/galeria.html">Portafolio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="../views/contacto.html">Contacto</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- FOTO PORTADA -->
+
+    <img src="../images/imagen9.jpg" alt="image-hotel" class="image-hotel-contact">
+    <div class="container">
+        <div class="text-center">
+            <h2 class="subtitle">Contacto</h2>
+        </div>
+    </div>
+
+    <!-- FORMULARIO -->
+
+    <main class="main">
+        <div class="container mt-4">
+            <div class="row">
+                <div class="col-md-6">
+                    <article>
+                        <h5>Rellena el formulario</h5>
+                        <form id="presupuesto-form" class="formulario-personalizado">
+                            <fieldset>
+                                <div class="form-item mb-3">
+                                    <label for="nombre">Nombre</label><br>
+                                    <input id="nombre" type="text" class="form-control" placeholder="Nombre" required
+                                        pattern="[A-Za-z ]{3,40}"
+                                        title="El nombre debe tener entre 3 y 40 caracteres y solo puede contener letras y espacios"
+                                        maxlength="40">
+                                </div>
+
+                                <div class="form-item mb-3">
+                                    <label for="apellidos">Apellidos</label><br>
+                                    <input id="apellidos" type="text" class="form-control" placeholder="Apellidos"
+                                        required pattern="[A-Za-z ]{4,60}"
+                                        title="Los apellidos deben tener entre 4 y 60 caracteres y solo pueden contener letras y espacios"
+                                        maxlength="60">
+                                </div>
+
+                                <div class="form-item mb-3">
+                                    <label for="telefono">Teléfono</label><br>
+                                    <input id="telefono" type="text" class="form-control" placeholder="666 666 666"
+                                        required oninput="this.value = this.value.replace(/[^0-9]/g, '')"
+                                        pattern="[0-9]{9}"
+                                        title="El teléfono debe tener exactamente 9 dígitos y solo puede contener números"
+                                        maxlength="9">
+                                </div>
+
+                                <div class="form-item mb-3">
+                                    <label for="correo">Correo electrónico</label><br>
+                                    <input type="email" id="correo" class="form-control"
+                                        placeholder="usuario@dominio.com" required
+                                        pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+                                        title="Debe ser un correo válido en formato usuario@dominio.com">
+                                </div>
+
+                                <div class="form-item mb-3">
+                                    <label for="comentarios">Comentarios</label><br>
+                                    <textarea id="comentarios" class="form-control" rows="4"></textarea>
+                                </div>
+
+                                <div class="d-flex gap-2">
+                                    <button type="submit" class="btn btn-primary">Enviar</button>
+                                    <button type="reset" class="btn btn-secondary">Resetear</button>
+                                </div>
+                            </fieldset>
+                        </form>
+                        <div id="error-message"></div>
+                    </article>
+                </div>
+
+                <!-- Columna del mapa -->
+                <div class="col-md-6">
+                    <div id="map" style="height: 400px;"></div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer class="footer bg-light text-center">
+        <div class="container">
+            <div class="row align-items-center" style="height: 100px;">
+                <div class="col-md-4">
+                    <p>Carrer de les Carolines, 11, 08012 Barcelona - Aviso Legal</p>
+                </div>
+                <div class="col-md-4">
+                    <ul class="list-unstyled">
+                        <li><a href="../index.html">Inicio</a></li>
+                        <li><a href="../views/galeria.html">Portafolio</a></li>
+                        <li><a href="../views/contacto.html">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <div style="display: flex; justify-content: center; gap: 1rem;">
+                        <a href="https://facebook.com" target="_blank">
+                            <img src="../images/logo-facebook.png" alt="Facebook" height="30">
+                        </a>
+                        <a href="https://twitter.com" target="_blank">
+                            <img src="../images/logo-twitter.png" alt="Twitter" height="30">
+                        </a>
+                        <a href="https://instagram.com" target="_blank">
+                            <img src="../images/logo-instagram.png" alt="Instagram" height="30">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- SCRIPTS -->
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
